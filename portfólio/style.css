@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(21, 28, 54);
+    color: aliceblue;
+}
+
+.navegacao{
+position: fixed;
+top: 0;
+background: rgb(21, 28, 54);
+width: 100%;
+z-index: 100;
+padding: 1.5rem;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.menu-link{
+text-decoration: none;
+color: aliceblue;
+font-weight: 500;
+position: relative;
+padding: 0.5rem 0;
+}
+
+.menu-link::after{
+    content:'';
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg,rgb(122, 12, 137)
+    );
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+.cabecalho{
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+
+.foto-perfil{
+    width: 350px;
+    height: 350px;
+    box-shadow:  0 0 20px rgb(96, 40, 160);
+    border-radius: 50%;
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1{
+    font-size: 3.5rem;
+    color: rgb(96, 40, 160);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-sub-titulo{
+    font-size: 2.0rem;
+    color: aliceblue;
+}
+
+.Sobre{
+padding: 6rem 2rem;
+}
+
+.sobre-titulo{
+font-size: 3rem;
+color: aliceblue;
+margin-bottom: 20px;
+}
+
+.sobre-caixa{
+padding: 2rem;
+max-width: 800px;
+margin: 0 auto;
+border-radius: 16px;
+border: 1px solid white;
+backdrop-filter: blur(10px);
+background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-texto{
+text-align: center;
+font-size:1.1rem;
+}
+
+.projetos{
+    padding: 6rem 2rem;
+}
+
+.projetos-caixa{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.projetos-card{
+background: rgba(255, 255, 255, 0.05);
+border-radius: 16px;
+backdrop-filter: blur(5px);
+border: 1px white;
+overflow: hidden;
+transition: all 0.5s;
+cursor: pointer;
+}
+
+.projetos-titulo{
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 50px;
+}
+
+.projetos-card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03)
+}
+
+.projetos-imagem{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.caixa-textos-projetos{
+    padding: 1.5rem;
+}
+
+.paragrafo-projetos{
+color: white;
+line-height: 0.25rem;
+}
+
+.info-projetos{
+    margin-bottom: 10px;
+}
+
+.contatos{
+padding: 6rem 2rem;
+}
+
+.contatos-titulo{
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 50px;
+}
+
+.formulario-contato{
+max-width: 600px;
+margin: 0 auto;
+background: rgba(123, 119, 119, 0.05);
+backdrop-filter: blur(5px);
+padding: 2rem;
+border: 1px white;
+border-radius: 17px;
+}
+
+.grupo-form{
+margin-bottom: 1.5rem;
+}
+
+.campo-form{
+width: 100%;
+padding: 1rem;
+background: rgba(255, 255, 255, 0.05);
+border-radius: 8px;
+border: 1px white;
+outline: none;
+color: white; /*texto digitando*/
+font-size: 1rem;
+}
+
+.campo-form:focus{
+    border-color: white;
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.botao-form{
+    color: white;
+    background: linear-gradient(45deg, rgba(79, 70, 229, 0.3));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+
+.botao-form :hover{
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+.particulas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.3) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.3) 0%, transparent 20%);
+}
+
+@keyframes flutuar{
+    0%, 100%{
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
