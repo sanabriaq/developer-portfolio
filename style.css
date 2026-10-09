@@ -218,8 +218,8 @@ ul {
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 40px 28px 80px;
-  min-height: 80vh;
+  padding: 40px 28px 30px;
+  min-height: 70vh;
 }
 
 .hero-left {
@@ -287,53 +287,46 @@ ul {
 .cta {
   display: flex;
   gap: 14px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
-/*  STATS  */
-.stats {
-  display: inline-flex;
-  align-items: center;
-  gap: 32px;
-  padding: 22px 32px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+/*  STACK de tecnologias  */
+.hero-stack {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
 }
 
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stat-num {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  display: inline-flex;
-  align-items: baseline;
-}
-
-.plus {
-  font-size: 0.7em;
-  color: var(--accent);
-  margin-left: 1px;
-}
-
-.stat-lbl {
+.stack-label {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--dim);
   font-size: 13px;
-  color: var(--muted);
-  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.stat-divider {
-  width: 1px;
-  height: 36px;
-  background: var(--line);
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.stack-list li {
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 15px;
+  transition: all 0.3s var(--ease);
+}
+
+.stack-list li:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* HERO RIGHT (foto) */
@@ -474,6 +467,11 @@ ul {
 /* SECTIONS COMUNS */
 section {
   padding: 100px 28px;
+}
+
+/* aproxima a primeira seção do hero */
+#services {
+  padding-top: 50px;
 }
 
 .eyebrow {
@@ -735,15 +733,6 @@ section {
     max-width: none;
     margin-top: 30px;
   }
-
-  .stats {
-    gap: 18px;
-    padding: 18px 22px;
-  }
-
-  .stat-num {
-    font-size: 26px;
-  }
 }
 
 @media (max-width: 560px) {
@@ -773,11 +762,6 @@ section {
     justify-content: center;
   }
 
-  .stats {
-    width: 100%;
-    justify-content: space-between;
-  }
-
   .photo-tag {
     right: 50%;
     transform: translateX(50%);
@@ -787,5 +771,15 @@ section {
   .foot {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* ACESSIBILIDADE: desliga animações para quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
